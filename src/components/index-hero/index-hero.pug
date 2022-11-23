@@ -1,0 +1,66 @@
++include-style('index-hero')
++include-script('index-hero')
+
+section.index-hero
+	.container
+		.index-hero__inner
+			.index-hero__item.index-hero__item--main
+				.index-hero__slider
+					+swiper({
+						container_mod: 'slider-fs__container',
+						wrapper_mod: '',
+						navigation: true,
+						pagination: true,
+					}).slider-fs.js-slider-fs
+						.swiper-slide
+							<picture class=" index-slider__img-wrap">
+								<source  media="(min-width: 768px)"  srcset= '/local/templates/html/images/hero-slide-1.jpg.webp'>
+								<source media="(min-width: 0px)"  srcset="/local/templates/html/images/hero-slide-1-mobile.jpg.webp">
+								img(src="/local/templates/html/images/hero-slide-1.jpg.webp" alt="")
+							</picture>
+						.swiper-slide
+							+lazy-picture-slider({
+								source:[
+									{
+									media: '768',
+									img: 'images/hero-slide-1.jpg.webp',
+									placeholder: pixel
+									},
+										{
+									media: '0',
+									img: 'images/hero-slide-1-mobile.jpg.webp',
+									placeholder: pixel
+									}
+								]
+							})
+						.swiper-slide
+							+lazy-picture-slider({
+								source:[
+									{
+									media: '768',
+									img: 'images/hero-slide-1.jpg.webp',
+									placeholder: pixel
+									},
+										{
+									media: '0',
+									img: 'images/hero-slide-1-mobile.jpg.webp',
+									placeholder: pixel
+									}
+								]
+							})
+			.index-hero__item
+				.index-hero__banner
+					a(href="#").index-hero__img-wrap
+						<picture class=" index-slider__img-wrap">
+							<source  media="(min-width: 575px)"  srcset= '/local/templates/html/images/hero-banner-1.jpg.webp'>
+							<source media="(min-width: 0px)"  srcset="/local/templates/html/images/hero-banner-1-mobile.jpg.webp">
+							img(src="/local/templates/html/images/hero-banner-1.jpg.webp" alt="")
+						</picture>
+			.index-hero__item
+				.index-hero__banner
+					a(href="#").index-hero__img-wrap
+						<picture class=" index-slider__img-wrap">
+							<source  media="(min-width: 575px)"  srcset= '/local/templates/html/images/hero-banner-2.jpg.webp'>
+							<source media="(min-width: 0px)"  srcset="/local/templates/html/images/hero-banner-2-mobile.jpg.webp">
+							img(src="/local/templates/html/images/hero-banner-1.jpg.webp" alt="")
+						</picture>

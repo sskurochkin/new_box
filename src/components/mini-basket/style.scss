@@ -1,0 +1,118 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+.mini-basket {
+    max-width: 786px;
+    padding: 30px 18px 30px 40px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.13);
+    border-radius: 4px;
+    position: absolute;
+    top: calc(100% + 30px);
+    right: 0;
+    width: 100%;
+    max-height: calc(100vh - 250px);
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s ease;
+    &--empty {
+        max-height: none;
+        padding-right: 40px;
+    }
+    &.active {
+        top: calc(100% + 20px);
+        opacity: 1;
+        visibility: visible;
+    }
+    &__inner {
+        display: flex;
+        flex-direction: column;
+    }
+    &__body {
+        flex-grow: 1;
+        overflow: auto;
+        padding-right: 16px;
+        @include custom-scroll();
+    }
+    &__scroll {}
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-right: 16px;
+        margin-bottom: 30px;
+    }
+    &__title {
+        font-size: 24px;
+        font-weight: 600;
+    }
+    &__count {
+        font-size: 16px;
+    }
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-right: 16px;
+        margin-top: 30px;
+    }
+    &__total {
+        display: flex;
+        align-items: center;
+        &-title {
+            font-size: 16px;
+            color: #AAAAAA;
+            margin-right: 5px;
+        }
+        &-sum {
+            font-size: 24px;
+            font-weight: 600;
+        }
+    }
+    &__control {
+        display: flex;
+        align-items: center;
+    }
+    &__link {
+        margin-left: 35px;
+    }
+    &__empty {
+        &-image {
+            margin-bottom: 36px;
+        }
+        &-title {
+            font-weight: 600;
+            font-size: 24px;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        &-descr {
+            text-align: center;
+            font-size: 14px;
+            max-width: 400px;
+            margin: auto;
+        }
+        &-control {
+            padding-top: 16px;
+            border-top: 1px solid #E4E4E4;
+            display: flex;
+            justify-content: center;
+            margin-top: 65px;
+            .btn--wide {
+                width: auto;
+                padding: 0px 12px;
+            }
+        }
+    }
+    .header-notification__control {
+        &:hover {
+            @media (min-width: 1024px) {
+                cursor: pointer;
+                color: $c-primary;
+                .icon {
+                    fill: $c-primary;
+                }
+            }
+        }
+    }
+}

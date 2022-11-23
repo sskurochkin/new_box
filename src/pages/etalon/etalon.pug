@@ -1,0 +1,39 @@
+extends ../../layout/layout
+
+block vars
+	- var pageTitle = 'Текстовая'
+	- var pageBodyClass = ''
+	- var dir = './'
+
+block main
+	.container
+		.row
+			.col-lg-7.offset-lg-2
+				+breadcrumb({
+					content2 : 'H1 Open Sans SemiBold 36 • 44'
+				})
+				+page-header-section({
+					title: "Текстовая",
+					sidemenu: false
+				})
+				+include-style('content')
+				.content
+					img(src="https://picsum.photos/1058/489" alt="")
+					include ../../components/content/section-typography
+					include ../../components/content/section-images
+					include ../../components/content/section-list
+					include ../../components/content/section-table
+
+
+block componentsCriticalStyles
+	+componentsCriticalStyles-includer()
+block vendorScripts
+	+vendorScripts-includer()
+block componentsStyles
+	+style-includer()
+
+block componentsScripts
+	+componentsScripts-includer()
+
+block scripts
+	script(src="./js/vendor/swiper.min.js" defer)

@@ -1,0 +1,50 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+
+.catalog-targets {
+	margin-bottom: 37px;
+
+	&__list {
+		display  : flex;
+		flex-wrap: wrap;
+	}
+
+	&__link {
+		padding      : 4px 8px;
+		transition   : all .3s ease;
+		color        : #000;
+		margin-right : 26px;
+		white-space  : nowrap;
+		border-radius: 2px;
+		margin-bottom: 5px;
+
+		&:hover {
+			@media (min-width: 1024px) {
+				cursor          : pointer;
+				background-color: $c-primary;
+				color           : #fff;
+			}
+		}
+
+		&.active {
+			background-color: $c-primary;
+		}
+	}
+
+	&--inner {
+
+		.catalog-targets__link {
+			&:hover {
+				@media (min-width: 1024px) {
+					cursor          : pointer;
+					background-color: $c-primary-2;
+					color           : #fff;
+				}
+			}
+
+			&.active {
+				background-color: $c-primary-2;
+			}
+		}
+	}
+
+}
